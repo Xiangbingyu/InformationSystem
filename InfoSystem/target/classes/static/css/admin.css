@@ -1,0 +1,236 @@
+
+.edit-mode {
+    display: none;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem;
+    padding: 15px;
+    background: #f8f9fa;
+    border: 2px solid #007bff;
+    margin-top: 10px;
+    border-radius: 8px;
+}
+
+.user-item.editing .edit-mode,
+.user-item.adding .edit-mode {
+    display: grid !important; /* 强制显示网格布局 */
+}
+
+button {
+    padding: 8px 16px;
+    font-size: 14px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 1px solid transparent;
+}
+
+/* 悬停状态统一 */
+button:hover {
+    opacity: 0.9;
+    transform: translateY(-1px);
+}
+
+/* 禁用状态 */
+button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.button-group button {
+    min-width: 80px;
+    height: 36px;
+}
+
+.user-header {
+    font-weight: 600; /* 加粗表头文字 */
+    background: #ffe5e5; /* 浅红色背景 */
+}
+
+.user-header span {
+    font-weight: 700; /* 进一步加粗 */
+}
+
+.user-list {
+    min-width: 800px; /* 保留此处即可 */
+}
+
+.user-item .view-mode {
+    display: grid;
+    grid-template-columns: 1fr 3fr 1fr 1fr 1fr 1fr;
+    gap: 15px;
+    align-items: center;
+    padding: 12px;
+    height: 56px; /* 固定高度保持对齐 */
+}
+
+/* 操作按钮容器 */
+.action-buttons button {
+    min-width: 60px;
+    height: 32px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.user-header,
+.user-item:not(.editing) > .view-mode {
+    display: grid;
+    grid-template-columns: 1fr 3fr 1fr 1fr 1fr 1fr;
+    gap: 15px;
+    align-items: center;
+    padding: 12px;
+}
+
+.user-item.editing .edit-mode {  /* 缺少这个关键规则 */
+    display: grid !important; /* 强制显示网格布局 */
+}
+
+.user-item.adding .edit-mode {
+    display: flex !important; /* 强制显示编辑模式 */
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 15px;
+}
+
+.confirm-btn {
+    background: #2ecc71;
+    color: white;
+}
+
+.cancel-btn {
+    background: #95a5a6;
+    color: white;
+}
+
+.pagination-controls {
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    justify-content: center;
+}
+
+.loading-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255,255,255,0.8);
+    z-index: 1000;
+}
+
+.form-group {
+    margin: 0;
+}
+/* 修改角色列表样式 */
+.role-list {
+    display: grid;
+    gap: 1.5rem;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+}
+
+.role-item {
+    padding: 1rem;
+    display: grid;
+    gap: 0.5rem;
+}
+
+.role-item h3 {
+    margin: 0;
+    font-size: 1.1rem;
+}
+
+.role-item p {
+    margin: 0;
+    color: #666;
+}
+
+.role-item button {
+    background: #9b59b6;
+    color: white;
+    min-width: 80px;
+    height: 36px;
+}
+
+.role-item button:hover {
+    background: #2980b9;
+}
+
+.add-user-btn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-bottom: 15px;
+}
+
+.add-user-btn:hover {
+    background-color: #45a049;
+}
+
+.add-user-form {
+    display: none;
+    background: #f8f9fa;
+    padding: 20px;
+    border-radius: 8px;
+    margin-top: 20px;
+    border: 2px solid #007bff;
+}
+
+.add-user-form.active {
+    display: block;
+}
+
+.user-item.adding .edit-mode {
+    display: block;
+    width: 100%;
+    padding: 15px;
+    box-sizing: border-box;
+}
+
+.user-item.adding {
+    background-color: #f8f9fa;
+    border: 2px dashed #ccc;
+    margin: 10px 0;
+    animation: fadeIn 0.3s ease-in; /* 添加淡入效果 */
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.user-list-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+/* 创建表单样式 */
+.user-create-form {
+    display: none;
+    background: #f8f9fa;
+    padding: 20px;
+    border-radius: 8px;
+    margin-top: 20px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.user-create-form.active {
+    display: block;
+}
+
+.user-create-form .form-group {
+    margin-bottom: 15px;
+}
+
+.user-create-form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 500;
+}

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teacher Dashboard</title>
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/teacher.css">
+</head>
+<body>
+<div class="container">
+    <h1>Teacher Dashboard</h1>
+
+    <!-- 教师信息 -->
+    <div class="teacher-info" id="teacher-info">
+        <h2>Teacher Information</h2>
+        <div id="teacher-details">
+            <!-- 教师信息将在这里动态加载 -->
+        </div>
+    </div>
+
+    <div class="dashboard-grid">
+        <!-- 课程列表 -->
+        <div class="course-list">
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+                <h2>Courses List</h2>
+                <button class="add-btn" onclick="showAddCourseModal()">Add</button>
+            </div>
+            <table id="courses-table">
+                <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Course Name</th>
+                    <th>Hours</th>
+                    <th>Description</th>
+                    <th>Syllabus File</th>
+                    <th>Created At</th>
+                    <th>Updated At</th>
+                    <th>Actions</th>
+                </tr>
+                </thead>
+                <tbody id="courses-body">
+                <!-- 课程数据将在这里动态加载 -->
+                </tbody>
+            </table>
+            <div class="pagination" id="course-pagination">
+                <!-- 分页控件 -->
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- 弹窗：教师信息 -->
+<div id="teacher-modal" class="modal">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h2>Teacher Information</h2>
+            <span class="close" onclick="closeModal('teacher-modal')">&times;</span>
+        </div>
+        <div class="modal-body">
+            <p><strong>Username:</strong> <span id="modal-username"></span></p>
+            <p><strong>Email:</strong> <span id="modal-email"></span></p>
+            <p><strong>Role:</strong> Teacher</p>
+        </div>
+        <div class="modal-footer">
+            <button onclick="logout()">Exit</button>
+        </div>
+    </div>
+</div>
+
+<!-- 弹窗：添加或编辑课程 -->
+<div id="add-course-modal" class="modal">
+    <div class="modal-content">
+        <!-- 保持原有弹窗内容不变 -->
+    </div>
+</div>
+
+<!-- 在页面底部添加隐藏iframe -->
+<iframe id="refreshTrigger" style="display:none;"></iframe>
+<script src="js/teacher.js"></script>
+</body>
+</html>

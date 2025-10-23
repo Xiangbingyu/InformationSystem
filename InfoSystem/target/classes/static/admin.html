@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/admin.css">
+</head>
+<body>
+<!-- 导航栏 -->
+<nav class="admin-nav">
+    <h1>Admin Dashboard</h1>
+    <div class="nav-links">
+        <button class="logout-btn" onclick="logout()">Log Out</button>
+    </div>
+</nav>
+<div class="container">
+    <!-- 用户管理模块 -->
+    <section id="users-section" class="content-section active">
+        <h2>User List</h2>
+        <button class="add-user-btn" onclick="showAddUserForm()">Add User</button>
+        <div class="user-list-container">
+            <div class="user-list" id="user-list"></div>
+            <div class="pagination-controls">
+                <button id="prev-page">previous page</button>
+                <span id="page-indicator">page 1</span>
+                <button id="next-page">next page</button>
+            </div>
+        </div>
+    </section>
+</div>
+
+<script src="js/admin.js"></script>
+</body>
+</html>
